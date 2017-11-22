@@ -1,0 +1,14 @@
+<h1>Liste des reviews pour <%= @restaurant.name %></h1>
+
+<% @reviews.each do |r| %>
+  <p> <strong><%= r.content %></strong>, rating: <%= r.rating %> </em> </p>
+  <%= link_to "Edit review", edit_restaurant_review_path(id: r.id, restaurant_id: r.restaurant_id) %>
+  <%= link_to "Delete review", review_path(r.id),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
+
+<div class="bottom-index-review">
+  <%= link_to "Retour à la liste des restaurants", restaurants_path %>
+</div>
+

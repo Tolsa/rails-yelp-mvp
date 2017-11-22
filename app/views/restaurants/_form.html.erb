@@ -1,0 +1,27 @@
+<%= simple_form_for (@restaurant) do |r| %>
+  <div class="form-group">
+    <%= r.label :name %>
+    <%= r.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= r.label :address %>
+    <%= r.text_field :address, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= r.label :phone_number %>
+    <%= r.text_field :phone_number, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= r.label :category %>
+    <%= r.text_field :category, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= r.input :rating, input_html: {min: 0, max: 5}, class: 'form-control' %>
+  </div>
+
+  <%= r.submit class: 'btn btn-primary' %>
+<% end %>

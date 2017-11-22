@@ -1,0 +1,6 @@
+<h1>Liste des restaurants</h1>
+
+<% @restaurants.each do |r| %>
+  <p> <strong><%= link_to "#{r.name}", restaurant_reviews_path(r.id) %></strong>, situé <%= r.address %> </p>
+  <p> <%= link_to "Ajouter une review", new_restaurant_review_path(r.id)%></p>
+<% end %>
